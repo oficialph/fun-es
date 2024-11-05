@@ -1,0 +1,26 @@
+def converte_hora(hora, minuto):
+    if hora == 0:
+        nova_hora = 12
+        periodo = "A.M."
+    elif 1 <= hora < 12:
+        nova_hora = hora
+        periodo = "A.M."
+    elif hora == 12:
+        nova_hora = 12
+        periodo = "P.M."
+    else:
+        nova_hora = hora - 12
+        periodo = "P.M."
+    return nova_hora, minuto, periodo
+
+def exibe_hora(hora, minuto, periodo):
+    print(f"{hora}:{minuto:02d} {periodo}")
+
+hora_24 = int(input("Digite a hora (0-23): "))
+minuto_24 = int(input("Digite os minutos (0-59): "))
+
+if 0 <= hora_24 <= 23 and 0 <= minuto_24 <= 59:
+    hora_12, minuto, periodo = converte_hora(hora_24, minuto_24)
+    exibe_hora(hora_12, minuto, periodo)
+else:
+    print("Hora ou minutos fora do intervalo permitido.")
