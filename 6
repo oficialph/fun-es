@@ -1,0 +1,8 @@
+def somaImposto(taxaImposto, custo):
+    return custo * (1 + taxaImposto / 100)
+
+taxa = 10 
+preco = 100 
+preco_com_imposto = somaImposto(taxa, preco)
+
+print(f"O preço com imposto é: {preco_com_imposto}")
